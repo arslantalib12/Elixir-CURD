@@ -1,0 +1,15 @@
+<div class="phx-hero">
+  <h2>Edit User</h2>
+  <%= form_for @changeset, Routes.hello_path(@conn, :update, @edit_user), fn f -> %>
+    <label>
+      Name: <%= text_input f, :name, placeholder: "Please Enter Your Name" %>
+    </label>
+
+    <label>
+      email: <%= text_input f, :email, placeholder: "Please Enter Email Address" %>
+    </label>
+
+    <%= submit "Update", class: "btn btn-success" %>
+  <% end %>
+
+</div>

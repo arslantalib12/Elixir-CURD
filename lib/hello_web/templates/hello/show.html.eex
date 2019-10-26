@@ -1,0 +1,19 @@
+<div class="phx-hero">
+  <h2>Current User</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+  <tbody>
+      <tr>
+        <td><%= @show.id %></td>
+        <td><%= @show.name %></td>
+        <td><%= @show.email %></td>
+       </tr>
+  </tbody>
+  </table>
+</div>

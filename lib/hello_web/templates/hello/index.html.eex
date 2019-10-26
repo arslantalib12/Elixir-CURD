@@ -1,0 +1,39 @@
+<section class="phx-hero">
+ <h1>CURD Operation</h1>
+   <%= link to: Routes.hello_path(@conn, :new) do %>
+     <button type="button" class="btn btn-primary" style="float:left; margin: 10px;">Add New User</button>
+   <% end %>
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col" colspan="2" style="text-align:center;">Action</th>
+    </tr>
+  </thead>
+
+  <%= for show <- @show do %>
+  <tbody>
+    <tr>
+      <td><%= show.id %></td>
+      <td><%= show.name %></td>
+      <td><%= show.email %></td>
+      <td><%= link to: Routes.hello_path(@conn, :edit, show) do %>
+      <button type="button" class="btn btn-success">Edit</button>
+       <% end%>
+      </td>
+      <td><%= link to: Routes.hello_path(@conn, :delete, show), method: :delete do %>
+      <button type="button" class="btn btn-danger">Delete</button>
+       <% end%>
+      </td>
+    </tr>
+
+  <%#= link show.email, to: Routes.hello_path(@conn, :show, show) %>
+
+  <% end %>
+    </tbody>
+  </table>
+
+</section>
+
